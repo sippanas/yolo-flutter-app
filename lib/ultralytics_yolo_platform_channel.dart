@@ -152,9 +152,7 @@ class PlatformChannelUltralyticsYolo implements UltralyticsYoloPlatform {
     final objects = <DetectedObject>[];
 
     result?.forEach((json) {
-      json = json as Map<String, dynamic>?;
-      if (json == null) return;
-      objects.add(DetectedObject.fromJson(json as Map));
+      objects.add(DetectedObject.fromJson(Map<String, dynamic>.from (json as Map)));
     });
 
     return objects;
